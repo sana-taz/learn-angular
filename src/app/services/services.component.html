@@ -1,0 +1,142 @@
+<div
+  class="
+    flex
+    2xl:w-3/5
+    xl:w-3/5
+    lg:w-4/5
+    md:w-full
+    sm:w-full
+    w-full
+    h-full
+    justify-center
+    container
+    font-inter
+    mx-auto
+    p-6
+  "
+>
+  <div class="flex flex-col w-full justify-start items-start">
+    <div class="text-gray-900 font-bold text-3xl">Services</div>
+    <div class="text-gray-800 font-normal text-base my-2 content-center">
+      Services are used to create variables/data that can be shared and can be
+      used outside the component in which it is defined.
+    </div>
+    <div class="text-gray-800 font-normal text-base my-2 content-center">
+      Angular that interfaces with a RESTful web API then you should have come
+      across services. Services are essentially the interfaces we should use in
+      order to interact with these APIs.
+    </div>
+    <div class="text-gray-800 font-normal text-base my-2 content-center">
+      They essentially provide a cleaner interface with which we can interact
+      with APIs. If you are building a todo application that interacts with say
+      a ToDo REST api then what method do you think is cleaner?
+    </div>
+    <div class="text-gray-800 font-normal text-base my-2 content-center">
+      Defining a HTTP Promise, remembering the exact URL for the api and having
+      to define the path parameters, modify cookies, play with http headers etc
+      every time you want to create a new ToDo from multiple locations in your
+      application or? Define all of the above ONCE in a service so that we could
+      do something like: TodoService.addTodo(todoObj);
+    </div>
+    <div class="text-gray-800 font-normal text-base my-2 content-center">
+      Clearly it’s got to be the second way. It doesn’t take away the complexity
+      of working with an API but it focuses it in one small place following the
+      DRY principle. Having it in one place also makes maintenance far easier,
+      say for instance v2 of your API was released and you had to move all of
+      your apps over to that API? Well having it defined in on service would
+      mean that you just have one place to update it from.
+    </div>
+    <div class="text-gray-900 font-semibold text-xl">
+      Defining a Service in Angular
+    </div>
+    <div class="text-gray-800 font-normal text-base my-4 content-center">
+      In order to define a service, create a file called user.service.ts. Within
+      this file we will then do the following:
+    </div>
+    <div class="flex w-full mt-4">
+      <iframe
+        src="https://www.thiscodeworks.com/embed/61bc7b054461e000151aad88"
+        style="width: 100%; height: 268px"
+        frameborder="0"
+      ></iframe>
+    </div>
+    <div class="text-gray-900 font-semibold mt-4 text-xl">
+      Using our New Service
+    </div>
+    <div class="text-gray-800 font-normal text-base my-4 content-center">
+      If we wanted to start using our UserService within one of our components
+      we would first have to import that service and pass the path to that file
+      and then Inject it through the constructor of our components class.
+    </div>
+    <div class="flex w-full my-2">
+      <iframe
+        src="https://www.thiscodeworks.com/embed/61bc7b5a4461e000151aad89"
+        style="width: 100%; height: 320px"
+        frameborder="0"
+      ></iframe>
+    </div>
+
+    <div class="flex w-full h-full items-end mt-6">
+      <div
+        class="
+          flex
+          2xl:flex-row
+          xl:flex-row
+          lg:flex-row
+          md:flex-row
+          flex-col
+          w-full
+          sm:justify-between
+        "
+      >
+        <div>
+          <a routerLink="/databinding">
+            <button
+              class="
+                rounded-full
+                flex flex-row
+                w-full
+                justify-center
+                items-center
+                px-8
+                py-3
+                my-2
+                border border-blue-700
+                text-blue-700 text-center
+                font-bold
+                text-base
+              "
+            >
+              <img class="pr-2" src="../assets/icons/previous-icon.svg" />
+              <div>Previous Topic</div>
+            </button>
+          </a>
+        </div>
+        <div>
+          <a routerLink="/interaction">
+            <button
+              class="
+                rounded-full
+                flex flex-row
+                w-full
+                justify-center
+                items-center
+                px-8
+                py-3
+                my-2
+                bg-blue-700
+                border border-blue-700
+                text-white text-center
+                font-bold
+                text-base
+              "
+            >
+              <div>Next Topic</div>
+              <img class="pl-2" src="../assets/icons/next-icon.svg" />
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

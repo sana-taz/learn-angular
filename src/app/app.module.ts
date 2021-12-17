@@ -18,9 +18,10 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { InteractionComponent } from './interaction/interaction.component';
 import { RouteComponent } from './route/route.component';
+import { ServicesComponent } from './services/services.component';
 
 @NgModule({
-  declarations: [AppComponent, IntroductionComponent, AngularCliSetupComponent, PageNotFoundComponent, ArchitectureComponent, DataBindingComponent, DirectivesComponent, InteractionComponent, RouteComponent],
+  declarations: [AppComponent, IntroductionComponent, AngularCliSetupComponent, PageNotFoundComponent, ArchitectureComponent, DataBindingComponent, DirectivesComponent, InteractionComponent, RouteComponent, ServicesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

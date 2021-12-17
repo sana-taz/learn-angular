@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { DirectivesComponent } from './directives/directives.component';
 import { InteractionComponent } from './interaction/interaction.component';
 import { RouteComponent } from './route/route.component';
+import { ServicesComponent } from './services/services.component';
 const routes: Routes = [
   { path: '', redirectTo: '/intro', pathMatch: 'full' },
   { path: 'intro', component: IntroductionComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'databinding', component: DataBindingComponent },
   { path: 'directives', component: DirectivesComponent },
   { path: 'interaction', component: InteractionComponent },
+  { path: 'service', component: ServicesComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
