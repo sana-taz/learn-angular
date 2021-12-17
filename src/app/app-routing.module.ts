@@ -9,19 +9,19 @@ import { DirectivesComponent } from './directives/directives.component';
 import { InteractionComponent } from './interaction/interaction.component';
 import { RouteComponent } from './route/route.component';
 const routes: Routes = [
-  {path:"", redirectTo: '/intro', pathMatch:'full'},
-  {path:"intro", component: IntroductionComponent},
-  {path:"route", component: RouteComponent},
-  {path:"setup", component: AngularCliSetupComponent},
-  {path:"architecture", component: ArchitectureComponent},
-  {path:"databinding", component: DataBindingComponent},
-  {path:"directives", component: DirectivesComponent},
-  {path:"interaction", component: InteractionComponent},
-  {path:"**", component: PageNotFoundComponent},
+  { path: '', redirectTo: '/intro', pathMatch: 'full' },
+  { path: 'intro', component: IntroductionComponent },
+  { path: 'route', component: RouteComponent },
+  { path: 'setup', component: AngularCliSetupComponent },
+  { path: 'architecture', component: ArchitectureComponent },
+  { path: 'databinding', component: DataBindingComponent },
+  { path: 'directives', component: DirectivesComponent },
+  { path: 'interaction', component: InteractionComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
