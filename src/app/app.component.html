@@ -1,5 +1,5 @@
-<div class="flex flex-col w-full h-screen">
-  <mat-toolbar class="mat-elevation-z8 bg-gray-900 text-white">
+<div class="flex flex-col font-inter w-full h-screen">
+  <mat-toolbar class="font-inter mat-elevation-z8 bg-gray-900 text-white">
     <button
       mat-icon-button
       *ngIf="sidenav.mode === 'over'"
@@ -14,7 +14,7 @@
   <mat-sidenav-container>
     <mat-sidenav
       #sidenav="matSidenav"
-      class="mat-elevation-z8 bg-gray-900 text-gray-400 p-2 text-center"
+      class="mat-elevation-z8 font-inter bg-gray-900 text-gray-400 p-2 text-center"
     >
       <button mat-button class="menu-button">
         <a routerLink="/intro" routerLinkActive="text-white"
@@ -89,7 +89,7 @@
       </button>
     </mat-sidenav>
     <mat-sidenav-content>
-      <div class="content mat-elevation-z8">
+      <div class="content font-inter mat-elevation-z8">
         <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>

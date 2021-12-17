@@ -6,6 +6,9 @@ mat-sidenav {
     justify-content: start;
     align-items: start;
 }
+.font-inter {
+    font-family: 'Inter', sans-serif;
+}
 mat-sidenav-container {
     height: calc(100vh - 65px);
 }
