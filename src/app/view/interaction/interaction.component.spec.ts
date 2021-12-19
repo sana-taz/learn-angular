@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RouteComponent } from './route.component';
+import { InteractionComponent } from './interaction.component';
 
-describe('RouteComponent', () => {
-  let component: RouteComponent;
-  let fixture: ComponentFixture<RouteComponent>;
+describe('InteractionComponent', () => {
+  let component: InteractionComponent;
+  let fixture: ComponentFixture<InteractionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RouteComponent ]
+      declarations: [ InteractionComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RouteComponent);
+    fixture = TestBed.createComponent(InteractionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

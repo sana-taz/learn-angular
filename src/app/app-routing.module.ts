@@ -7,19 +7,19 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { InteractionComponent } from './interaction/interaction.component';
-import { RouteComponent } from './route/route.component';
 import { ServicesComponent } from './services/services.component';
 const routes: Routes = [
-  { path: '', redirectTo: '/intro', pathMatch: 'full' },
-  { path: 'intro', component: IntroductionComponent },
-  { path: 'route', component: RouteComponent },
-  { path: 'setup', component: AngularCliSetupComponent },
-  { path: 'architecture', component: ArchitectureComponent },
-  { path: 'databinding', component: DataBindingComponent },
-  { path: 'directives', component: DirectivesComponent },
-  { path: 'interaction', component: InteractionComponent },
-  { path: 'service', component: ServicesComponent },
-  { path: '**', component: PageNotFoundComponent },
+  // { path: '', redirectTo: '/intro', pathMatch: 'full' },
+  {path:"", redirectTo: '/root-page', pathMatch:'full'},
+  // { path: 'intro', component: IntroductionComponent },
+  // { path: 'route', component: RouteComponent },
+  // { path: 'setup', component: AngularCliSetupComponent },
+  // { path: 'architecture', component: ArchitectureComponent },
+  // { path: 'databinding', component: DataBindingComponent },
+  // { path: 'directives', component: DirectivesComponent },
+  // { path: 'interaction', component: InteractionComponent },
+  // { path: 'service', component: ServicesComponent },
+  // { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
