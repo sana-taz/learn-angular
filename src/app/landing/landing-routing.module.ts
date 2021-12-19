@@ -4,7 +4,7 @@ import { PageComponent } from './page/page.component';
 import { LandingComponent } from './landing.component';
 const routes: Routes = [
   {
-    path: 'root-page',
+    path: 'landing-page',
     component: LandingComponent,
     children: [{ path: '', component: PageComponent }],
   },
