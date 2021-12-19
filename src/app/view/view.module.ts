@@ -18,6 +18,7 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { InteractionComponent } from './interaction/interaction.component';
 import { ServicesComponent } from './services/services.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     ArchitectureComponent,
@@ -27,7 +28,8 @@ import { ServicesComponent } from './services/services.component';
     DataBindingComponent,
     DirectivesComponent,
     InteractionComponent,
-    ServicesComponent
+    ServicesComponent,
+    PageNotFoundComponent
   ],
   imports: [
     CommonModule,

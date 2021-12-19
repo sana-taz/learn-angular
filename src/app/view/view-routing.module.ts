@@ -7,6 +7,7 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { InteractionComponent } from './interaction/interaction.component';
 import { ServicesComponent } from './services/services.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ViewComponent } from './view.component';
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
       { path: 'databinding', component: DataBindingComponent },
       { path: 'directive', component: DirectivesComponent },
       { path: 'interaction', component: InteractionComponent },
-      { path: 'services', component: ServicesComponent }
+      { path: 'services', component: ServicesComponent },
+      { path: '**', component: PageNotFoundComponent }
     ]
   }
 ];
