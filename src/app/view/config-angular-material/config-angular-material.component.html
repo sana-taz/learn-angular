@@ -1,0 +1,137 @@
+<div
+  class="
+    flex
+    2xl:w-3/5
+    xl:w-3/5
+    lg:w-4/5
+    md:w-full
+    sm:w-full
+    w-full
+    h-full
+    justify-center
+    container
+    font-inter
+    mx-auto
+    p-6
+  "
+>
+  <div class="flex flex-col w-full justify-start items-start">
+    <div class="text-gray-900 font-bold text-3xl">
+      Config Angular material in Angular CLI
+    </div>
+    <ul
+      class="
+        list-decimal
+        text-gray-800
+        font-normal
+        text-base
+        my-2
+        content-center
+      "
+    >
+      <li class="flex flex-col justify-start my-2">
+        <div>1. Install angular material with this command</div>
+        <div class="flex w-full mt-4">
+          <iframe
+            src="https://www.thiscodeworks.com/embed/61bfdc1654e0160015c9be36"
+            style="width: 100%; height: 99px"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </li>
+      <li class="flex flex-col justify-start my-2">
+        <div>
+          2. You need to import the
+          <span class="font-medium">MatSliderModule</span>  that you want to
+          display by adding the following lines to your 
+          <span class="font-medium">app.module.ts</span> file.
+        </div>
+        <div class="flex w-full mt-4">
+          <iframe
+            src="https://www.thiscodeworks.com/embed/61bfdc5354e0160015c9be37"
+            style="width: 100%; height: 190px"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </li>
+      <li class="flex flex-col justify-start my-2">
+        <div>
+          3.Add the <span class="font-medium">mat-slider</span> tag to the <span
+            class="font-medium"
+            >app.component.html </span
+          >like so:
+        </div>
+        <div class="flex w-full mt-4">
+          <iframe
+            src="https://www.thiscodeworks.com/embed/61bfdd2054e0160015c9be38"
+            style="width: 100%; height: 99px"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </li>
+    </ul>
+
+    <div class="flex w-full h-full items-end mt-6">
+      <div
+        class="
+          flex
+          2xl:flex-row
+          xl:flex-row
+          lg:flex-row
+          md:flex-row
+          flex-col
+          w-full
+          sm:justify-between
+        "
+      >
+        <div>
+          <a routerLink="/view/tailwind">
+            <button
+              class="
+                rounded-full
+                flex flex-row
+                w-full
+                justify-center
+                items-center
+                px-8
+                py-3
+                my-2
+                border border-blue-700
+                text-blue-700 text-center
+                font-bold
+                text-base
+              "
+            >
+              <img class="pr-2" src="../assets/icons/previous-icon.svg" />
+              <div>Previous Topic</div>
+            </button>
+          </a>
+        </div>
+        <div>
+          <a routerLink="/view/todo">
+            <button
+              class="
+                rounded-full
+                flex flex-row
+                w-full
+                justify-center
+                items-center
+                px-8
+                py-3
+                my-2
+                bg-blue-700
+                border border-blue-700
+                text-white text-center
+                font-bold
+                text-base
+              "
+            >
+              <div>Next Topic</div>
+              <img class="pl-2" src="../assets/icons/next-icon.svg" />
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

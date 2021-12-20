@@ -19,6 +19,10 @@ import { DirectivesComponent } from './directives/directives.component';
 import { InteractionComponent } from './interaction/interaction.component';
 import { ServicesComponent } from './services/services.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HttpRequestComponent } from './http-request/http-request.component';
+import { ConfigTailwindComponent } from './config-tailwind/config-tailwind.component';
+import { ConfigAngularMaterialComponent } from './config-angular-material/config-angular-material.component';
+import { FormComponent } from './form/form.component';
 @NgModule({
   declarations: [
     ArchitectureComponent,
@@ -29,7 +33,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     DirectivesComponent,
     InteractionComponent,
     ServicesComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HttpRequestComponent,
+    ConfigTailwindComponent,
+    ConfigAngularMaterialComponent,
+    FormComponent
   ],
   imports: [
     CommonModule,

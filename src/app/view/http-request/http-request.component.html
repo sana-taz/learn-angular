@@ -1,0 +1,119 @@
+<div
+  class="
+    flex
+    2xl:w-3/5
+    xl:w-3/5
+    lg:w-4/5
+    md:w-full
+    sm:w-full
+    w-full
+    h-full
+    justify-center
+    container
+    font-inter
+    mx-auto
+    p-6
+  "
+>
+  <div class="flex flex-col w-full justify-start items-start">
+    <div class="text-gray-900 font-bold text-3xl">
+      Interacting with Http APIs
+    </div>
+    <div class="text-gray-800 font-normal text-base my-2 content-center">
+      Typically services are used as an interface between your components and
+      your outside RESTful APIs. If you are wanting to do some form of Http
+      request then you’ll have to first add the necessary imports and then
+      within your function return a http request that maps the response and
+      error into json.
+    </div>
+
+    <div class="flex w-full mt-4">
+      <iframe
+        src="https://www.thiscodeworks.com/embed/61bfd61254e0160015c9be30"
+        style="width: 100%; height: 320px"
+        frameborder="0"
+      ></iframe>
+    </div>
+
+    <div class="text-gray-800 font-normal text-base my-4 content-center">
+      Once we’ve returned our http observable we can then call this function and
+      subscribe to the response like so:
+    </div>
+    <div class="flex w-full my-2">
+      <iframe
+        src="https://www.thiscodeworks.com/embed/61bfd66454e0160015c9be31"
+        style="width: 100%; height: 398px"
+        frameborder="0"
+      ></iframe>
+    </div>
+    <div class="text-gray-800 font-normal text-base my-4 content-center">
+      Notice above that we import our newly defined ArticleService at the top
+      and then ask for it as a parameter in our constructor. We then let our
+      dependency injection do it’s magic and then we are able to call any of
+      that service’s defined methods.
+    </div>
+
+    <div class="flex w-full h-full items-end mt-6">
+      <div
+        class="
+          flex
+          2xl:flex-row
+          xl:flex-row
+          lg:flex-row
+          md:flex-row
+          flex-col
+          w-full
+          sm:justify-between
+        "
+      >
+        <div>
+          <a routerLink="/view/services">
+            <button
+              class="
+                rounded-full
+                flex flex-row
+                w-full
+                justify-center
+                items-center
+                px-8
+                py-3
+                my-2
+                border border-blue-700
+                text-blue-700 text-center
+                font-bold
+                text-base
+              "
+            >
+              <img class="pr-2" src="../assets/icons/previous-icon.svg" />
+              <div>Previous Topic</div>
+            </button>
+          </a>
+        </div>
+        <div>
+          <a routerLink="/view/form">
+            <button
+              class="
+                rounded-full
+                flex flex-row
+                w-full
+                justify-center
+                items-center
+                px-8
+                py-3
+                my-2
+                bg-blue-700
+                border border-blue-700
+                text-white text-center
+                font-bold
+                text-base
+              "
+            >
+              <div>Next Topic</div>
+              <img class="pl-2" src="../assets/icons/next-icon.svg" />
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
