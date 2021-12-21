@@ -16,10 +16,87 @@
   "
 >
   <div class="flex flex-col w-full justify-start items-start">
-    <div class="text-gray-900 font-bold text-3xl">
-     Form
+    <div class="text-gray-900 font-bold text-3xl">Forms</div>
+    <div class="text-gray-800 font-normal text-base my-2 content-center">
+      Forms are an integral part of a web application. Practically every
+      application comes with forms to be filled in by the users. Angular forms
+      are used to log in, update a profile, enter sensitive information, and
+      perform many other data-entry tasks. In this article, you will learn about
+      how to create a form and validate the information filled.
     </div>
-
+    <div class="text-gray-900 font-semibold text-xl">Template driven forms</div>
+    <div class="text-gray-800 font-normal text-base my-4 content-center">
+      <ul class="list list-disc list-inside">
+        <li class="my-1">
+          In this method, the conventional form tag is used to create forms.
+          Angular automatically interprets and creates a form object
+          representation for the tag.
+        </li>
+        <li class="my-1">
+          Controls can be added to the form using the NGModel tag. Multiple
+          controls can be grouped using the NGControlGroup module.
+        </li>
+        <li class="my-1">
+          A form value can be generated using the “form.value” object. Form data
+          is exported as JSON values when the submit method is called.
+        </li>
+        <li class="my-1">
+          Basic HTML validations can be used to validate the form fields. In the
+          case of custom validations, directives can be used.
+        </li>
+        <li class="my-1">
+          Arguably, this method is the simplest way to create an Angular App.
+        </li>
+      </ul>
+    </div>
+    <div class="text-gray-900 font-semibold text-xl">
+      Reactive Form Approach
+    </div>
+    <div class="text-gray-800 font-normal text-base my-4 content-center">
+      <ul class="list list-disc list-inside">
+        <li class="my-1">
+          This approach is the programming paradigm oriented around data flows
+          and propagation of change.
+        </li>
+        <li class="my-1">
+          With Reactive forms, the component directly manages the data flows
+          between the form controls and the data models.
+        </li>
+        <li class="my-1">
+          Reactive forms are code-driven, unlike the template-driven approach.
+        </li>
+        <li class="my-1">
+          Reactive forms break from the traditional declarative approach.
+        </li>
+        <li class="my-1">
+          Reactive forms eliminate the anti-pattern of updating the data model
+          via two-way data binding.
+        </li>
+        <li class="my-1">
+          Typically, Reactive form control creation is synchronous and can be
+          unit tested with synchronous programming techniques.
+        </li>
+      </ul>
+    </div>
+    <div class="text-gray-900 font-semibold text-xl">Form Control</div>
+    <div class="my-2">
+      <img class="flex w-full" src="https://i.imgur.com/2i2xTWg.png" />
+    </div>
+    <div class="text-gray-800 font-normal text-base my-4 content-center">
+      Form Control is a class that enables validation. For each input field, an
+      instance of this class is created. These instances help check the values
+      of the field and see if they are touched, untouched, dirty, pristine,
+      valid, invalid, and so on.
+    </div>
+    <div class="text-gray-900 font-semibold text-xl">Form Group</div>
+    <div class="my-2">
+      <img class="flex w-full" src="https://i.imgur.com/hd1oLvM.png" />
+    </div>
+    <div class="text-gray-800 font-normal text-base my-4 content-center">
+      FormGroup class represents a group of controls. A form can have multiple
+      control groups. The Form Group class returns true if all the controls are
+      valid and also provides validation errors, if any
+    </div>
 
     <div class="flex w-full h-full items-end mt-6">
       <div
