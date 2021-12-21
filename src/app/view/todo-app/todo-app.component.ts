@@ -17,7 +17,6 @@ export class TodoAppComponent implements OnInit {
     private _taskservice: HttpService,
     private toastr: ToastrService
   ) {}
-
   ngOnInit(): void {
     this.getTasks();
   }
@@ -45,7 +44,10 @@ export class TodoAppComponent implements OnInit {
       },
       (error) => (this.errorMsg = error)
     );
-    this.toastr.success('Task Added Successfully');
+    this.toastr.success('Task Added successfully', '', {
+      timeOut: 1500,
+      disableTimeOut: false
+    });
   }
   openEdit(task: any, index: any) {
     task = this.tasks[index];
@@ -62,9 +64,11 @@ export class TodoAppComponent implements OnInit {
       (error) => (this.errorMsg = error)
     );
     this.tasks.splice(index, 1);
-    this.toastr.success('Task Deleted Successfully');
+    this.toastr.success('Task Deleted successfully', '', {
+      timeOut: 1500,
+      disableTimeOut: false
+    });
   }
-
   editTask(task: any, index: any) {
     task = this.tasks[index];
     task.showInput = 'false';
@@ -75,6 +79,9 @@ export class TodoAppComponent implements OnInit {
       },
       (error) => (this.errorMsg = error)
     );
-    this.toastr.success('Task Updated Successfully');
+    this.toastr.success('Task updated successfully', '', {
+      timeOut: 1500,
+      disableTimeOut: false
+    });
   }
 }
