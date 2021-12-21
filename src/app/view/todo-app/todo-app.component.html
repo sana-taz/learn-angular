@@ -8,7 +8,7 @@
       md:w-full
       sm:w-full
       w-full
-      h-full
+      h-screen
       justify-center
       container
       font-inter
@@ -73,19 +73,68 @@
           </div>
         </div>
       </div>
-      <!-- <div class="flex flex-col items-start">
-        <p class="text-xl font-bold"><b>httprequest works!</b></p>
-        {{ errorMsg }}
-        <div class="m-1" *ngFor="let i of students">
+      <div class="flex w-full h-full items-end mt-6">
+        <div
+          class="
+            flex
+            2xl:flex-row
+            xl:flex-row
+            lg:flex-row
+            md:flex-row
+            flex-col
+            w-full
+            sm:justify-between
+          "
+        >
           <div>
-            <button class="bg-blue-400 p-2 rounded m-1">{{ i.id }}</button>
+            <a routerLink="/view/angular-material">
+              <button
+                class="
+                  rounded-full
+                  flex flex-row
+                  w-full
+                  justify-center
+                  items-center
+                  px-8
+                  py-3
+                  my-2
+                  border border-blue-700
+                  text-blue-700 text-center
+                  font-bold
+                  text-base
+                "
+              >
+                <img class="pr-2" src="../assets/icons/previous-icon.svg" />
+                <div>Previous Topic</div>
+              </button>
+            </a>
+          </div>
+          <div>
+            <a routerLink="/view/todo">
+              <button
+                class="
+                  rounded-full
+                  flex flex-row
+                  w-full
+                  justify-center
+                  items-center
+                  px-8
+                  py-3
+                  my-2
+                  bg-blue-700
+                  border border-blue-700
+                  text-white text-center
+                  font-bold
+                  text-base
+                "
+              >
+                <div>Next Topic</div>
+                <img class="pl-2" src="../assets/icons/next-icon.svg" />
+              </button>
+            </a>
           </div>
         </div>
-
-        <a class="bg-gray-200 p-2 m-2 hover:bg-blue-200 rounded" routerLink="/"
-          >Go Back</a
-        >
-      </div> -->
+      </div>
     </div>
   </div>
 </div>
