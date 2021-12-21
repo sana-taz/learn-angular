@@ -29,6 +29,11 @@ export class HttpService {
       .delete<Task[]>(`${this.url}/${id}`)
       .pipe(catchError(this.errorHandler));
   }
+  completeTask(id: any): Observable<Task[]> {
+    return this.http
+      .delete<Task[]>(`${this.url}/${id}/complete`)
+      .pipe(catchError(this.errorHandler));
+  }
   errorHandler(error: HttpErrorResponse) {
     return observableThrowError(error.message || 'Server Error');
   }

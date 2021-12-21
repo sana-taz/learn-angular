@@ -18,9 +18,7 @@
       "
     >
       <div class="flex flex-col w-full justify-start items-center">
-        <div (click)="showSuccess()" class="text-gray-900 font-bold text-3xl">
-          Services
-        </div>
+        <div class="text-gray-900 font-bold text-3xl">TODO</div>
         <div
           class="
             flex flex-row
@@ -71,66 +69,99 @@
           </div>
         </div>
         <div class="flex flex-col w-full justify-start items-start my-4">
-          <div
-            class="
-              flex flex-row
-              justify-between
-              items-center
-              rounded-xl
-              shadow-sm
-              bg-white
-              my-1
-              w-full
-              p-3
-            "
-            *ngFor="let task of tasks; index as i"
-          >
-            <div *ngIf="errorMsg" class="text-red-500 font-medium">
-              {{ errorMsg }}
-            </div>
-            <div *ngIf="task.showInput === 'false'">{{ task.taskTitle }}</div>
+          <div class="flex w-full" *ngFor="let task of tasks; index as i">
             <div
-              *ngIf="task.showInput === 'true'"
+              *ngIf="task.status === 'pending'"
               class="
                 flex flex-row
-                w-full
                 justify-between
-                px-2
-                rounded-md
-                border
+                items-center
+                rounded-xl
+                shadow-sm
+                bg-white
+                my-1
+                w-full
+                p-3
               "
             >
-              <input
-                [(ngModel)]="task.taskTitle"
-                class="flex m-1 w-full focus:outline-none"
-                type="text"
-              />
-              <mat-icon
-                (click)="editTask(task, i)"
+              <div *ngIf="errorMsg" class="text-red-500 font-medium">
+                {{ errorMsg }}
+              </div>
+              <div class="flex flex-row items-center">
+                <mat-icon
+                  (click)="statusChanged(task, i)"
+                  class="mx-2 text-gray-400 hover:text-gray-900"
+                  >panorama_fish_eye</mat-icon
+                >
+                <div *ngIf="task.showInput === 'false'">
+                  {{ task.taskTitle }}
+                </div>
+              </div>
+              <div
+                *ngIf="task.showInput === 'true'"
                 class="
-                  bg-green-500
-                  text-center
-                  m-1
+                  flex flex-row
+                  w-full
+                  justify-between
+                  px-2
                   rounded-md
-                  text-white text-sm
+                  border
                 "
-                >done</mat-icon
               >
-            </div>
-            <div class="flex flex-row items-center">
-              <div>
+                <input
+                  [(ngModel)]="task.taskTitle"
+                  class="flex m-1 w-full focus:outline-none"
+                  type="text"
+                />
+                <mat-icon
+                  (click)="editTask(task, i)"
+                  class="
+                    bg-green-500
+                    text-center
+                    m-1
+                    rounded-md
+                    text-white text-sm
+                  "
+                  >done</mat-icon
+                >
+              </div>
+              <div class="flex flex-row items-center">
                 <mat-icon
                   class="text-gray-400 hover:text-gray-900 mx-2"
                   (click)="openEdit(task, i)"
                   >create</mat-icon
                 >
-              </div>
-              <div>
                 <mat-icon
                   (click)="removeTask(task, i)"
                   class="mx-2 text-gray-400 hover:text-gray-900"
-                  >remove_circle</mat-icon
+                  >delete</mat-icon
                 >
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col w-full justify-start my-2">
+            <div class="flex flex-col w-full justify-start" *ngFor="let task of tasks; index as i">
+              <!-- <div class=" flex w-2/5 p-3 my-2 bg-white rounded-xl"> Done</div> -->
+              <div
+                *ngIf="task.status === 'completed'"
+                class="
+                  flex flex-row
+                  justify-between
+                  items-center
+                  rounded-xl
+                  shadow-sm
+                  bg-white
+                  my-1
+                  w-full
+                  p-3
+                "
+              >
+                <div class="flex flex-row items-center">
+                  <mat-icon class="mx-2 text-gray-400">check_circle</mat-icon>
+                  <div class="line-through text-gray-400">
+                    {{ task.taskTitle }}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -178,7 +209,7 @@
               </div>
               <a
                 class="hover:underline text-blue-900"
-                routerLink="https://github.com/sana-taz/learn-angular"
+                href="https://github.com/sana-taz/learn-angular"
               >
                 https://github.com/sana-taz/learn-angular
               </a>

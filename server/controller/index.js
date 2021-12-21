@@ -2,7 +2,7 @@ const dbConn = require("../config");
 module.exports = class Admin {
   static getTasks(req, res) {
     dbConn.query(
-      "SELECT * FROM TAsk",
+      "SELECT * FROM Task ORDER BY createdAt DESC",
       (err, result) => {
         if (err) {
           console.log(err);
@@ -21,7 +21,8 @@ module.exports = class Admin {
   static addTask(req, res) {
     const task = {
       taskTitle: req.body.taskTitle,
-      showInput: req.body.showInput
+      showInput: req.body.showInput,
+      status: req.body.status
     };
     const query = "INSERT INTO Task SET ?";
 
@@ -65,6 +66,29 @@ module.exports = class Admin {
         });
       }
     );
+  }
+
+  static completeTask(req, res) {
+    const taskId = req.params.taskId
+
+    dbConn.query(
+      "UPDATE Task SET status = 'completed' WHERE taskId = ?",
+      [taskId],
+      (err, result) => {
+        if (err) {
+          console.log(err)
+          return res.json({
+            success: false,
+            error: 'Unable to complete task',
+          })
+        }
+
+        return res.json({
+          success: true,
+          message: 'Task Completed Sucessfully',
+        })
+      }
+    )
   }
 
   static deleteTask(req, res) {

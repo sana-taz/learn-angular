@@ -12,7 +12,7 @@ export class TodoAppComponent implements OnInit {
   public tasks: any;
   public errorMsg: any;
   public newIndex = -1;
-  public newTask = { taskTitle: '', showInput: 'false' };
+  public newTask = { taskTitle: '', showInput: 'false', status: 'pending' };
   constructor(
     private _taskservice: HttpService,
     private toastr: ToastrService
@@ -46,7 +46,7 @@ export class TodoAppComponent implements OnInit {
     );
     this.toastr.success('Task Added successfully', '', {
       timeOut: 1500,
-      disableTimeOut: false
+      disableTimeOut: false,
     });
   }
   openEdit(task: any, index: any) {
@@ -66,7 +66,7 @@ export class TodoAppComponent implements OnInit {
     this.tasks.splice(index, 1);
     this.toastr.success('Task Deleted successfully', '', {
       timeOut: 1500,
-      disableTimeOut: false
+      disableTimeOut: false,
     });
   }
   editTask(task: any, index: any) {
@@ -81,7 +81,22 @@ export class TodoAppComponent implements OnInit {
     );
     this.toastr.success('Task updated successfully', '', {
       timeOut: 1500,
-      disableTimeOut: false
+      disableTimeOut: false,
+    });
+  }
+  statusChanged(task: any, index: any) {
+    task = this.tasks[index];
+    this.newIndex = index;
+    task.status = 'completed';
+    this._taskservice.completeTask(task.taskId).subscribe(
+      (data: any) => {
+        task = data.task;
+      },
+      (error) => (this.errorMsg = error)
+    );
+    this.toastr.success('Task Completed successfully', '', {
+      timeOut: 1500,
+      disableTimeOut: false,
     });
   }
 }
