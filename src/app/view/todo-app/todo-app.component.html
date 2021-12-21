@@ -1,177 +1,189 @@
-<div class="flex w-full h-screen bg-blue-100">
-  <div
-    class="
-      flex
-      2xl:w-3/5
-      xl:w-3/5
-      lg:w-4/5
-      md:w-full
-      sm:w-full
-      w-full
-      h-full
-      justify-center
-      container
-      font-inter
-      mx-auto
-      p-6
-    "
-  >
-    <div class="flex flex-col w-full justify-start items-center">
-      <div  (click)="showSuccess()" class="text-gray-900 font-bold text-3xl">Services</div>
-      <div
-        class="
-          flex flex-row
-          w-full
-          2xl:justify-end
-          xl:justify-end
-          lg:justify-end
-          md:justify-center
-          justify-center
-          my-2
-          items-center
-          w-full
-        "
-      >
-        <div class="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col items-center">
-          <div class="mx-2">
-            <input
-              [(ngModel)]="newTask.taskTitle"
-              *ngIf="showAddInput"
-              class="bg-white p-2 focus:outline-none rounded-md"
-              type="text"
-              placeholder="Add Task"
-              (keyup.enter)="createTask()"
-            />
-          </div>
-          <div
-            class="flex flex-row items-center text-blue-700 text-sm font-normal"
-            (click)="showInputBox()"
-          >
-            <mat-icon class="mx-1">add_circle</mat-icon>
-            <div class="font-medium">Add Task</div>
-          </div>
+<div class="flex w-full h-full">
+  <div class="flex w-full h-screen bg-blue-100">
+    <div
+      class="
+        flex
+        2xl:w-3/5
+        xl:w-3/5
+        lg:w-4/5
+        md:w-full
+        sm:w-full
+        w-full
+        h-full
+        justify-center
+        container
+        font-inter
+        mx-auto
+        p-6
+      "
+    >
+      <div class="flex flex-col w-full justify-start items-center">
+        <div (click)="showSuccess()" class="text-gray-900 font-bold text-3xl">
+          Services
         </div>
-      </div>
-      <div class="flex flex-col w-full justify-start items-start my-4">
         <div
           class="
             flex flex-row
-            justify-between
-            items-center
-            rounded-xl
-            shadow-sm
-            bg-white
-            my-1
             w-full
-            p-3
+            2xl:justify-end
+            xl:justify-end
+            lg:justify-end
+            md:justify-center
+            justify-center
+            my-2
+            items-center
+            w-full
           "
-          *ngFor="let task of tasks; index as i"
         >
-          <div *ngIf="errorMsg" class="text-red-500 font-medium">
-            {{ errorMsg }}
-          </div>
-          <div *ngIf="task.showInput === 'false'">{{ task.taskTitle }}</div>
           <div
-            *ngIf="task.showInput === 'true'"
             class="
-              flex flex-row
-              w-full
-              justify-between
-              px-2
-              rounded-md
-              bg-gray-100
-              border
+              flex
+              2xl:flex-row
+              xl:flex-row
+              lg:flex-row
+              md:flex-row
+              flex-col
+              items-center
             "
           >
-            <input
-              [(ngModel)]="task.taskTitle"
-              class="flex m-1 w-full focus:outline-none"
-              type="text"
-            />
-
-            <mat-icon
-              (click)="editTask(task, i)"
-              class="bg-green-500 text-center m-1 rounded-md text-white text-sm"
-              >done</mat-icon
-            >
-          </div>
-          <div class="flex flex-row items-center">
-            <div>
-              <mat-icon
-                class="text-gray-400 hover:text-gray-900 mx-2"
-                (click)="openEdit(task, i)"
-                >create</mat-icon
-              >
+            <div class="mx-2">
+              <input
+                [(ngModel)]="newTask.taskTitle"
+                *ngIf="showAddInput"
+                class="bg-white p-2 focus:outline-none rounded-md"
+                type="text"
+                placeholder="Add Task"
+                (keyup.enter)="createTask()"
+              />
             </div>
-            <div>
-              <mat-icon
-                (click)="removeTask(task, i)"
-                class="mx-2 text-gray-400 hover:text-gray-900"
-                >remove_circle</mat-icon
-              >
+            <div
+              class="
+                flex flex-row
+                items-center
+                text-blue-700 text-sm
+                font-normal
+              "
+              (click)="showInputBox()"
+            >
+              <mat-icon class="mx-1">add_circle</mat-icon>
+              <div class="font-medium">Add Task</div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="flex w-full h-full items-end mt-6">
-        <div
-          class="
-            flex
-            2xl:flex-row
-            xl:flex-row
-            lg:flex-row
-            md:flex-row
-            flex-col
-            w-full
-            sm:justify-between
-          "
-        >
-          <div>
-            <a routerLink="/view/angular-material">
-              <button
+        <div class="flex flex-col w-full justify-start items-start my-4">
+          <div
+            class="
+              flex flex-row
+              justify-between
+              items-center
+              rounded-xl
+              shadow-sm
+              bg-white
+              my-1
+              w-full
+              p-3
+            "
+            *ngFor="let task of tasks; index as i"
+          >
+            <div *ngIf="errorMsg" class="text-red-500 font-medium">
+              {{ errorMsg }}
+            </div>
+            <div *ngIf="task.showInput === 'false'">{{ task.taskTitle }}</div>
+            <div
+              *ngIf="task.showInput === 'true'"
+              class="
+                flex flex-row
+                w-full
+                justify-between
+                px-2
+                rounded-md
+                border
+              "
+            >
+              <input
+                [(ngModel)]="task.taskTitle"
+                class="flex m-1 w-full focus:outline-none"
+                type="text"
+              />
+
+              <mat-icon
+                (click)="editTask(task, i)"
                 class="
-                  rounded-full
-                  flex flex-row
-                  w-full
-                  justify-center
-                  items-center
-                  px-8
-                  py-3
-                  my-2
-                  border border-blue-700
-                  text-blue-700 text-center
-                  font-bold
-                  text-base
+                  bg-green-500
+                  text-center
+                  m-1
+                  rounded-md
+                  text-white text-sm
                 "
+                >done</mat-icon
               >
-                <img class="pr-2" src="../assets/icons/previous-icon.svg" />
-                <div>Previous Topic</div>
-              </button>
-            </a>
+            </div>
+            <div class="flex flex-row items-center">
+              <div>
+                <mat-icon
+                  class="text-gray-400 hover:text-gray-900 mx-2"
+                  (click)="openEdit(task, i)"
+                  >create</mat-icon
+                >
+              </div>
+              <div>
+                <mat-icon
+                  (click)="removeTask(task, i)"
+                  class="mx-2 text-gray-400 hover:text-gray-900"
+                  >remove_circle</mat-icon
+                >
+              </div>
+            </div>
           </div>
-          <div>
-            <a routerLink="/view/todo">
-              <button
-                class="
-                  rounded-full
-                  flex flex-row
-                  w-full
-                  justify-center
-                  items-center
-                  px-8
-                  py-3
-                  my-2
-                  bg-blue-700
-                  border border-blue-700
-                  text-white text-center
-                  font-bold
-                  text-base
-                "
+        </div>
+        <div class="flex w-full h-full items-end mt-6">
+          <div
+            class="
+              flex
+              2xl:flex-row
+              xl:flex-row
+              lg:flex-row
+              md:flex-row
+              flex-col
+              w-full
+              sm:justify-between
+            "
+          >
+            <div>
+              <a routerLink="/view/angular-material">
+                <button
+                  class="
+                    rounded-full
+                    flex flex-row
+                    w-full
+                    justify-center
+                    items-center
+                    px-8
+                    py-3
+                    my-2
+                    border border-blue-700
+                    text-blue-700 text-center
+                    font-bold
+                    text-base
+                  "
+                >
+                  <img class="pr-2" src="../assets/icons/previous-icon.svg" />
+                  <div>Previous Topic</div>
+                </button>
+              </a>
+            </div>
+            <div class="flex flex-col my-2 items-center justify-center">
+              <div>
+                Source Code of <span class="font-semibold">TODO App </span> with
+                Express.js
+              </div>
+              <a
+                class="hover:underline text-blue-900"
+                routerLink="https://github.com/sana-taz/learn-angular"
               >
-                <div>Next Topic</div>
-                <img class="pl-2" src="../assets/icons/next-icon.svg" />
-              </button>
-            </a>
+                https://github.com/sana-taz/learn-angular
+              </a>
+            </div>
           </div>
         </div>
       </div>
