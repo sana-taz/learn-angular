@@ -6,8 +6,8 @@ import { HttpService } from '../http.service';
   styleUrls: ['./todo-app.component.css'],
 })
 export class TodoAppComponent implements OnInit {
-  public showAddInput = false;
   public showEditInput = false;
+  public showAddInput = false;
   public tasks: any;
   public errorMsg: any;
   public newIndex = -1;
@@ -26,23 +26,27 @@ export class TodoAppComponent implements OnInit {
     );
   }
   showInputBox() {
+    this.newTask.taskTitle = '';
     this.showAddInput = true;
   }
   createTask() {
     this._taskservice.addTask(this.newTask).subscribe(
       (data: any) => {
         const newTask = data.task;
-        // Object.keys(newElement).forEach(key => newElement[key]=null);
         this.tasks.push(newTask);
         this.showAddInput = false;
+        // if (this.newTask.taskTitle == null) {
+        //   this.tasks.push(newTask);
+        // }
+        // Object.keys(newTask).forEach((key) => (newTask[key] = null));
       },
       (error) => (this.errorMsg = error)
     );
   }
   openEdit(task: any, index: any) {
     task = this.tasks[index];
+    task.showInput = 'true';
     this.newIndex = index;
-    this.showEditInput = true;
   }
   removeTask(task: any, index: any) {
     task = this.tasks[index];
@@ -58,6 +62,7 @@ export class TodoAppComponent implements OnInit {
 
   editTask(task: any, index: any) {
     task = this.tasks[index];
+    task.showInput = 'false';
     this.newIndex = index;
     this._taskservice.updateTask(task.taskId, task).subscribe(
       (data: any) => {
@@ -65,6 +70,5 @@ export class TodoAppComponent implements OnInit {
       },
       (error) => (this.errorMsg = error)
     );
-    this.showEditInput = false;
   }
 }
