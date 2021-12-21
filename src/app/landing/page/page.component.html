@@ -43,7 +43,10 @@
           Angular Made Simple
         </div>
         <div class="font-base text-base text-center text-gray-400 my-4">
-          Learn Angular in 7 days with our world-class learning experience
+          Angular docs help you learn and use the Angular framework and
+          development platform, from your first application to optimizing
+          complex single-page apps for enterprises. Tutorials and guides include
+          downloadable examples to accelerate your projects.
         </div>
         <div class="my-4">
           <a routerLink="/view/introduction">
@@ -114,7 +117,7 @@
             gap-x-8
           "
         >
-          <div
+          <a
             class="
               my-4
               flex flex-col
@@ -131,6 +134,7 @@
               hover:-translate-y-1
               motion-reduce:transition-none motion-reduce:transform-none
             "
+            routerLink="/view/introduction"
           >
             <div
               class="
@@ -144,79 +148,10 @@
               What is Angular
             </div>
             <div class="text-gray-700 text-sm font-normal">
-              Learn Angular in 7 days with our world-class learning experience
-              Learn Angular in 7 days with our world-class
+              Angular is a JavaScript framework written in TypeScript.
             </div>
-          </div>
-          <div
-            class="
-              my-4
-              flex flex-col
-              items-start
-              px-6
-              py-4
-              border
-              hover:shadow-md
-              bg-white
-              rounded-md
-              text-black
-              transition
-              transform
-              hover:-translate-y-1
-              motion-reduce:transition-none motion-reduce:transform-none
-            "
-          >
-            <div
-              class="
-                text-blue-700
-                hover:underline hover:underline-offset-2
-                text-xl
-                font-medium
-                my-2
-              "
-            >
-              What is Angular
-            </div>
-            <div class="text-gray-700 text-sm font-normal">
-              Learn Angular in 7 days with our world-class learning experience
-              Learn Angular in 7 days with our world-class
-            </div>
-          </div>
-          <div
-            class="
-              my-4
-              flex flex-col
-              items-start
-              px-6
-              py-4
-              border
-              hover:shadow-xl
-              bg-white
-              rounded-md
-              text-black
-              transition
-              transform
-              hover:-translate-y-1
-              motion-reduce:transition-none motion-reduce:transform-none
-            "
-          >
-            <div
-              class="
-                text-blue-700
-                hover:underline hover:underline-offset-2
-                text-xl
-                font-medium
-                my-2
-              "
-            >
-              What is Angular
-            </div>
-            <div class="text-gray-700 text-sm font-normal">
-              Learn Angular in 7 days with our world-class learning experience
-              Learn Angular in 7 days with our world-class
-            </div>
-          </div>
-          <div
+          </a>
+          <a
             class="
               my-4
               flex flex-col
@@ -229,9 +164,11 @@
               text-black
               transition
               transform
+              border
               hover:-translate-y-1
               motion-reduce:transition-none motion-reduce:transform-none
             "
+            routerLink="/view/directive"
           >
             <div
               class="
@@ -242,30 +179,31 @@
                 my-2
               "
             >
-              What is Angular
+              Directives
             </div>
             <div class="text-gray-700 text-sm font-normal">
-              Learn Angular in 7 days with our world-class learning experience
-              Learn Angular in 7 days with our world-class
+              Directives add additional behavior to elements in your Angular
+              applications.
             </div>
-          </div>
-          <div
+          </a>
+          <a
             class="
               my-4
               flex flex-col
               items-start
               px-6
               py-4
-              shadow-md
-              hover:shadow-xl
+              hover:shadow-md
               bg-white
               rounded-md
               text-black
               transition
               transform
+              border
               hover:-translate-y-1
               motion-reduce:transition-none motion-reduce:transform-none
             "
+            routerLink="/view/tailwind"
           >
             <div
               class="
@@ -276,30 +214,30 @@
                 my-2
               "
             >
-              What is Angular
+              Config with tailwindcss
             </div>
             <div class="text-gray-700 text-sm font-normal">
-              Learn Angular in 7 days with our world-class learning experience
-              Learn Angular in 7 days with our world-class
+              Tailwindcss is fast, flexible, and reliable — with zero-runtime.
             </div>
-          </div>
-          <div
+          </a>
+          <a
             class="
               my-4
               flex flex-col
               items-start
               px-6
               py-4
-              shadow-md
-              hover:shadow-xl
+              hover:shadow-md
               bg-white
               rounded-md
               text-black
               transition
               transform
+              border
               hover:-translate-y-1
               motion-reduce:transition-none motion-reduce:transform-none
             "
+            routerLink="/view/architecture"
           >
             <div
               class="
@@ -310,13 +248,82 @@
                 my-2
               "
             >
-              What is Angular
+              Learn and Explore
             </div>
             <div class="text-gray-700 text-sm font-normal">
-              Learn Angular in 7 days with our world-class learning experience
-              Learn Angular in 7 days with our world-class
+              Learn about the fundamental design concepts and architecture of
+              Angular apps.
             </div>
-          </div>
+          </a>
+          <a
+            class="
+              my-4
+              flex flex-col
+              items-start
+              px-6
+              py-4
+              hover:shadow-md
+              bg-white
+              rounded-md
+              text-black
+              transition
+              transform
+              border
+              hover:-translate-y-1
+              motion-reduce:transition-none motion-reduce:transform-none
+            "
+            routerLink="/view/todo"
+          >
+            <div
+              class="
+                text-blue-700
+                hover:underline hover:underline-offset-2
+                text-xl
+                font-medium
+                my-2
+              "
+            >
+              To-Do List
+            </div>
+            <div class="text-gray-700 text-sm font-normal">
+              Learn Angular with services and Rx.js operators.
+            </div>
+          </a>
+          <a
+            class="
+              my-4
+              flex flex-col
+              items-start
+              px-6
+              py-4
+              hover:shadow-md
+              bg-white
+              rounded-md
+              text-black
+              transition
+              transform
+              border
+              hover:-translate-y-1
+              motion-reduce:transition-none motion-reduce:transform-none
+            "
+            routerLink="/view/cli-setup"
+          >
+            <div
+              class="
+                text-blue-700
+                hover:underline hover:underline-offset-2
+                text-xl
+                font-medium
+                my-2
+              "
+            >
+              Setup CLI
+            </div>
+            <div class="text-gray-700 text-sm font-normal">
+              Set up your local environment for development with the Angular
+              CLI.
+            </div>
+          </a>
         </div>
       </div>
     </div>
