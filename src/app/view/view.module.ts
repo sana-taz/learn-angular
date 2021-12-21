@@ -27,6 +27,8 @@ import { ConfigAngularMaterialComponent } from './config-angular-material/config
 import { FormComponent } from './form/form.component';
 import { TodoAppComponent } from './todo-app/todo-app.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     ArchitectureComponent,
@@ -42,7 +44,7 @@ import { FormsModule } from '@angular/forms';
     ConfigTailwindComponent,
     ConfigAngularMaterialComponent,
     FormComponent,
-    TodoAppComponent
+    TodoAppComponent,
   ],
   imports: [
     CommonModule,
@@ -53,9 +55,11 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     MatIconModule,
     MatListModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     MatDividerModule,
     MatButtonModule,
-    ViewRoutingModule
-  ]
+    ViewRoutingModule,
+  ],
 })
-export class ViewModule { }
+export class ViewModule {}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-todo-app',
   templateUrl: './todo-app.component.html',
@@ -11,8 +12,11 @@ export class TodoAppComponent implements OnInit {
   public tasks: any;
   public errorMsg: any;
   public newIndex = -1;
-  public newTask = { taskTitle: '' };
-  constructor(private _taskservice: HttpService) {}
+  public newTask = { taskTitle: '', showInput: 'false' };
+  constructor(
+    private _taskservice: HttpService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.getTasks();
@@ -25,6 +29,9 @@ export class TodoAppComponent implements OnInit {
       (error) => (this.errorMsg = error)
     );
   }
+  showSuccess() {
+    this.toastr.success('Hello world!', 'Toastr fun!');
+  }
   showInputBox() {
     this.newTask.taskTitle = '';
     this.showAddInput = true;
@@ -33,15 +40,12 @@ export class TodoAppComponent implements OnInit {
     this._taskservice.addTask(this.newTask).subscribe(
       (data: any) => {
         const newTask = data.task;
-        this.tasks.push(newTask);
         this.showAddInput = false;
-        // if (this.newTask.taskTitle == null) {
-        //   this.tasks.push(newTask);
-        // }
-        // Object.keys(newTask).forEach((key) => (newTask[key] = null));
+        this.tasks.push(newTask);
       },
       (error) => (this.errorMsg = error)
     );
+    this.toastr.success('Task Added Successfully');
   }
   openEdit(task: any, index: any) {
     task = this.tasks[index];
@@ -58,6 +62,7 @@ export class TodoAppComponent implements OnInit {
       (error) => (this.errorMsg = error)
     );
     this.tasks.splice(index, 1);
+    this.toastr.success('Task Deleted Successfully');
   }
 
   editTask(task: any, index: any) {
@@ -70,5 +75,6 @@ export class TodoAppComponent implements OnInit {
       },
       (error) => (this.errorMsg = error)
     );
+    this.toastr.success('Task Updated Successfully');
   }
 }

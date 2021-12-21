@@ -20,7 +20,8 @@ module.exports = class Admin {
   }
   static addTask(req, res) {
     const task = {
-      taskTitle: req.body.taskTitle
+      taskTitle: req.body.taskTitle,
+      showInput: req.body.showInput
     };
     const query = "INSERT INTO Task SET ?";
 
