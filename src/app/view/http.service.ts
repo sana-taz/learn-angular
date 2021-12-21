@@ -1,17 +1,33 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { IUser } from '../user';
+import { Task } from '../task';
 import { Observable, throwError as observableThrowError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HttpService {
-
-  private url: string = 'https://jsonplaceholder.typicode.com/albums';
+  private url: string = 'http://localhost:5000/api/tasks';
   constructor(public http: HttpClient) {}
-  getUsers(): Observable<IUser[]> {
-    return this.http.get<IUser[]>(this.url).pipe(catchError(this.errorHandler));
+  getTasks(): Observable<Task[]> {
+    return this.http
+      .get<Task[]>(this.url)
+      .pipe(catchError(this.errorHandler));
+  }
+  addTask(data: any): Observable<Task[]> {
+    return this.http
+      .post<Task[]>(this.url, data)
+      .pipe(catchError(this.errorHandler));
+  }
+  updateTask(id: any, data: any): Observable<Task[]> {
+    return this.http
+      .put<Task[]>(`${this.url}/${id}`, data)
+      .pipe(catchError(this.errorHandler));
+  }
+  deleteTask(id: any): Observable<Task[]> {
+    return this.http
+      .delete<Task[]>(`${this.url}/${id}`)
+      .pipe(catchError(this.errorHandler));
   }
   errorHandler(error: HttpErrorResponse) {
     return observableThrowError(error.message || 'Server Error');

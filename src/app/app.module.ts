@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ViewModule } from './view/view.module';
 import { LandingModule } from './landing/landing.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { LandingModule } from './landing/landing.module';
     MatToolbarModule,
     MatSidenavModule,
     LandingModule,
+    FormsModule,
     MatIconModule,
     MatListModule,
     MatDividerModule,

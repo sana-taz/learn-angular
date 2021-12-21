@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ViewRoutingModule } from './view-routing.module';
 import { ArchitectureComponent } from './architecture/architecture.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -23,6 +25,8 @@ import { HttpRequestComponent } from './http-request/http-request.component';
 import { ConfigTailwindComponent } from './config-tailwind/config-tailwind.component';
 import { ConfigAngularMaterialComponent } from './config-angular-material/config-angular-material.component';
 import { FormComponent } from './form/form.component';
+import { TodoAppComponent } from './todo-app/todo-app.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     ArchitectureComponent,
@@ -37,13 +41,16 @@ import { FormComponent } from './form/form.component';
     HttpRequestComponent,
     ConfigTailwindComponent,
     ConfigAngularMaterialComponent,
-    FormComponent
+    FormComponent,
+    TodoAppComponent
   ],
   imports: [
     CommonModule,
     MatSliderModule,
+    HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,
+    FormsModule,
     MatIconModule,
     MatListModule,
     MatDividerModule,

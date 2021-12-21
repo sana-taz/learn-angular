@@ -11,6 +11,7 @@ import { HttpRequestComponent } from './http-request/http-request.component';
 import { ConfigTailwindComponent } from './config-tailwind/config-tailwind.component';
 import { ConfigAngularMaterialComponent } from './config-angular-material/config-angular-material.component';
 import { FormComponent } from './form/form.component';
+import { TodoAppComponent } from './todo-app/todo-app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ViewComponent } from './view.component';
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
       { path: 'tailwind', component: ConfigTailwindComponent},
       { path: 'angular-material', component: ConfigAngularMaterialComponent},
       { path: 'form', component: FormComponent},
+      { path: 'todo', component: TodoAppComponent},
       { path: '**', component: PageNotFoundComponent }
     ]
   }

@@ -4,7 +4,7 @@ const dbConn = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "node",
+  database: "learn-angular",
 });
 dbConn.on('connection', () => {
   console.log('DB Connection Established')

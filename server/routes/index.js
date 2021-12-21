@@ -4,10 +4,10 @@ const Admin  = require("../controller");
 
 const router = express.Router();
 
-// Users
-router.get("/students", Admin.getStudents);
-router.post("/students", Admin.addStudent);
-router.put("/students/:id", Admin.updateStudent);
-router.delete("/students/:id", Admin.deleteStudent);
+// Tasks
+router.get("/tasks", Admin.getTasks);
+router.post("/tasks", Admin.addTask);
+router.put("/tasks/:taskId", Admin.updateTask);
+router.delete("/tasks/:taskId", Admin.deleteTask);
 
 module.exports = router;

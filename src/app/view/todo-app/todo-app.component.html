@@ -1,0 +1,91 @@
+<div class="flex w-full bg-blue-100">
+  <div
+    class="
+      flex
+      2xl:w-3/5
+      xl:w-3/5
+      lg:w-4/5
+      md:w-full
+      sm:w-full
+      w-full
+      h-full
+      justify-center
+      container
+      font-inter
+      mx-auto
+      p-6
+    "
+  >
+    <div class="flex flex-col w-full justify-start items-start">
+      <div class="flex flex-row justify-between items-center w-full">
+        <div class="text-gray-900 font-bold text-3xl">Services</div>
+        <div class="flex flex-row items-center">
+          <div class="mx-2">
+            <input
+              [(ngModel)]="newTask.taskTitle"
+              *ngIf="showAddInput"
+              class="bg-white"
+              type="text"
+              (keyup.enter)="createTask()"
+            />
+          </div>
+          <div
+            class="text-blue-700 mx-2 text-sm font-normal"
+            (click)="showInputBox()"
+          >
+            Add Task
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col w-full justify-start items-start">
+        <div
+          class="
+            flex flex-row
+            justify-between
+            items-center
+            rounded-lg
+            shadow-sm
+            bg-white
+            my-2
+            w-full
+            p-3
+          "
+          *ngFor="let task of tasks; index as i"
+        >
+          <div *ngIf="errorMsg" class="text-red-500 font-medium">
+            {{ errorMsg }}
+          </div>
+          <div *ngIf="!showEditInput">{{ task.taskTitle }}</div>
+          <div>
+            <input
+              [(ngModel)]="task.taskTitle"
+              class="bg-gray-100 border"
+              *ngIf="showEditInput"
+              (keyup.enter)="editTask(task, i)"
+              type="text"
+            />
+          </div>
+          <div class="flex flex-row items-center">
+            <div (click)="openEdit(task, i)">edit</div>
+            <div (click)="removeTask(task, i)" class="mx-2">Delete</div>
+            <!-- <div (click)="editElement(student, i)" class="mx-2">Edit</div>
+            <div (click)="selectForDelete(i)" class="mx-2">Delete</div> -->
+          </div>
+        </div>
+      </div>
+      <!-- <div class="flex flex-col items-start">
+        <p class="text-xl font-bold"><b>httprequest works!</b></p>
+        {{ errorMsg }}
+        <div class="m-1" *ngFor="let i of students">
+          <div>
+            <button class="bg-blue-400 p-2 rounded m-1">{{ i.id }}</button>
+          </div>
+        </div>
+
+        <a class="bg-gray-200 p-2 m-2 hover:bg-blue-200 rounded" routerLink="/"
+          >Go Back</a
+        >
+      </div> -->
+    </div>
+  </div>
+</div>

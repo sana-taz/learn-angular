@@ -1,94 +1,88 @@
 const dbConn = require("../config");
 module.exports = class Admin {
-  static getStudents(req, res) {
+  static getTasks(req, res) {
     dbConn.query(
-      "SELECT * FROM student",
-
+      "SELECT * FROM TAsk",
       (err, result) => {
         if (err) {
           console.log(err);
           return res.json({
             success: false,
-            message: "Unable to get student",
+            message: "Unable to get tasks",
           });
         }
         return res.json({
           success: true,
-          students: result,
+          tasks: result,
         });
       }
     );
   }
-  static addStudent(req, res) {
-    const student = {
-      name: req.body.name,
-      phone: req.body.phone,
-      email: req.body.email
-    }
-    const check = 'INSERT INTO student SET ?'
+  static addTask(req, res) {
+    const task = {
+      taskTitle: req.body.taskTitle
+    };
+    const query = "INSERT INTO Task SET ?";
 
+    dbConn.query(query, [task], (err, result, fields) => {
+      if (err) {
+        console.log(err);
+        return res.json({
+          success: false,
+          error: "Unable to create task",
+        });
+      }
+
+      task.taskId = result.insertId;
+
+      return res.json({
+        success: true,
+        task,
+        message: "Task Added Successfully",
+      });
+    });
+  }
+
+  static updateTask(req, res) {
+    const task = req.body;
+    const taskId = req.params.taskId;
     dbConn.query(
-      check , [student],
+      "UPDATE Task SET  ? WHERE taskId = ?",
+      [task, taskId],
+      (err, result, fields) => {
+        if (err) {
+          return res.json({
+            success: false,
+            error: "Unable to Update task",
+          });
+        }
+
+        return res.json({
+          success: true,
+          message: "Task Updated Sucessfully",
+          task,
+        });
+      }
+    );
+  }
+
+  static deleteTask(req, res) {
+    const taskId = req.params.taskId;
+    dbConn.query(
+      "DELETE FROM Task WHERE taskId = ?",
+      [taskId],
       (err, result, fields) => {
         if (err) {
           console.log(err);
           return res.json({
             success: false,
-            error: "Unable to create student",
-          });
-        }
-        console.log(check)
-        student.id = result.insertId;
-
-        return res.json({
-          success: true,
-          student,
-          message: "student Added Successfully",
-        });
-      }
-    );
-  }
-
-  static updateStudent(req, res) {
-    const student = req.body;
-    const studentId = req.params.id;
-    dbConn.query(
-      "UPDATE student SET  ? WHERE id = ?",
-      [student, studentId],
-      (err, result, fields) => {
-        if (err) {
-          return res.json({
-            success: false,
-            error: "Unable to Update student",
+            error: "Unable to Delete task",
           });
         }
 
         return res.json({
           success: true,
-          message: "student Updated Sucessfully",
-          student,
-        });
-      }
-    );
-  }
-
-  static deleteStudent(req, res) {
-    const studentId = req.params.id;
-    dbConn.query(
-      "DELETE FROM student WHERE id = ?",
-      [studentId],
-      (err, result, fields) => {
-        if (err) {
-          console.log(err);
-          return res.json({
-            success: false,
-            error: "Unable to Delete student",
-          });
-        }
-
-        return res.json({
-          success: true,
-          message: "student Deleted Successfully",
+          message: "Task Deleted Successfully",
         });
       }
     );
