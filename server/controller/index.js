@@ -46,13 +46,18 @@ module.exports = class Admin {
   }
 
   static updateTask(req, res) {
-    const task = req.body;
+    const task = {
+      taskTitle: req.body.taskTitle,
+      showInput: req.body.showInput,
+      status: req.body.status
+    };
     const taskId = req.params.taskId;
     dbConn.query(
       "UPDATE Task SET  ? WHERE taskId = ?",
       [task, taskId],
       (err, result, fields) => {
         if (err) {
+          console.log(err);
           return res.json({
             success: false,
             error: "Unable to Update task",
