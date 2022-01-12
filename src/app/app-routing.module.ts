@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 const routes: Routes = [
-  {path:"", redirectTo: '/landing-page', pathMatch:'full'},
+  {path:"", redirectTo: '/landing-page/login', pathMatch:'full'},
 ];
 
 @NgModule({

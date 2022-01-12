@@ -14,12 +14,15 @@ import { FormComponent } from './form/form.component';
 import { TodoAppComponent } from './todo-app/todo-app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ViewComponent } from './view.component';
+import { LoginComponent } from '../landing/login/login.component';
+import { LandingComponent } from '../landing/landing.component';
+import { AuthGuard } from '../auth.guard';
 const routes: Routes = [
   {
     path: 'view',
     component: ViewComponent,
     children: [
-      { path: 'architecture', component: ArchitectureComponent },
+      { path: 'architecture', component: ArchitectureComponent , canActivate: [AuthGuard] },
       { path: 'introduction', component: IntroductionComponent },
       { path: 'cli-setup', component: AngularCliSetupComponent },
       { path: 'databinding', component: DataBindingComponent },
@@ -31,7 +34,9 @@ const routes: Routes = [
       { path: 'angular-material', component: ConfigAngularMaterialComponent},
       { path: 'form', component: FormComponent},
       { path: 'todo', component: TodoAppComponent},
-      { path: '**', component: PageNotFoundComponent }
+      { path: 'login' , component: LoginComponent} ,
+      { path: 'landing-page' , component:LandingComponent } ,
+      { path: '**', redirectTo: '/landing-page/login' , pathMatch: 'full' },
     ]
   }
 ];

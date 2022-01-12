@@ -1,5 +1,79 @@
 const dbConn = require("../config");
 module.exports = class Admin {
+  static registerUser(req,res){
+    const user = {
+      userName: req.body.userName,
+      emailId: req.body.emailId,
+      password: req.body.password
+    }
+    dbConn.query("INSERT INTO User SET ?",[user], (err, result, fields) => {
+      if (err) {
+        console.log(err);
+        return res.json({
+          success: false,
+          error: "Unable to create user",
+        });
+      }
+
+      user.userId = result.insertId;
+
+      return res.json({
+        success: true,
+        user,
+        message: "User Added Successfully",
+      });
+    }
+
+    )
+  }
+  static loginUser(req,res){
+     const emailId = req.body.emailId
+     const password = req.body.password
+    const query = `SELECT * FROM User WHERE emailId = ?;`
+    dbConn.query(query ,[emailId], (err, result, fields) => {
+      console.log(query)
+      if (err) {
+        console.log(err);
+        return res.json({
+          success: false,
+          error: "Unable to login user",
+        });
+      }
+      else {
+        if(result.length > 0 ){
+          if(result[0].password == password) {
+            res.json({
+              success: true,
+              result : result[0],
+              message: "Login successfull"
+            })
+          }
+          else {
+            res.json({
+              success: false,
+              message: "Email and password does not exit"
+
+            })
+          }
+        }
+        else {
+          res.json({
+            success: false,
+            message: "Email does not exist"
+          })
+        }
+      }
+
+
+      // return res.json({
+      //   success: true,
+      //   user,
+      //   message: "User Added Successfully",
+      // });
+    }
+
+    )
+  }
   static getTasks(req, res) {
     dbConn.query(
       "SELECT * FROM Task ORDER BY createdAt DESC",
