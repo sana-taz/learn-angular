@@ -1,17 +1,15 @@
 // import { Component, OnInit } from '@angular/core';
-import { Component, ViewChild,OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
-import { delay } from 'rxjs/operators'
+import { delay } from 'rxjs/operators';
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
-  styleUrls: ['./view.component.css']
+  styleUrls: ['./view.component.css'],
 })
 export class ViewComponent implements OnInit {
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
   constructor(private observer: BreakpointObserver) {}
@@ -29,5 +27,4 @@ export class ViewComponent implements OnInit {
         }
       });
   }
-
 }

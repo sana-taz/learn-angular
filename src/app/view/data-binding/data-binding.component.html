@@ -1,19 +1,5 @@
 <div
-  class="
-    flex
-    2xl:w-3/5
-    xl:w-3/5
-    lg:w-4/5
-    md:w-full
-    sm:w-full
-    w-full
-    h-full
-    justify-center
-    container
-    font-inter
-    mx-auto
-    p-6
-  "
+  class="flex 2xl:w-3/5 xl:w-3/5 lg:w-4/5 md:w-full sm:w-full w-full h-full justify-center container font-inter mx-auto p-6"
 >
   <div class="flex flex-col w-full justify-start items-start">
     <div class="text-gray-900 font-bold text-3xl">Data Binding</div>
@@ -36,28 +22,87 @@
       the data from the component to the view. String interpolation adds the
       value of a property from the component to the HTML template view.
     </div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '5s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div>
-      <img class="flex w-full my-4" src="https://i.imgur.com/RD3x3j1.jpg" />
+      <img
+        *ngIf="contentLoaded"
+        class="flex w-full my-4"
+        src="https://i.imgur.com/RD3x3j1.jpg"
+      />
     </div>
     <div class="font-semibold text-base text-gray-800">Syntax</div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '5s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full mt-4">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bbe4622e046e00150bd075"
         style="width: 100%; height: 100%"
         frameborder="0"
       ></iframe>
     </div>
     <div class="font-semibold text-base text-gray-800">app.component.html</div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '5s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full mt-4">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bbe4622e046e00150bd075"
         style="width: 100%; height: 100%"
         frameborder="0"
       ></iframe>
     </div>
     <div class="font-semibold text-base text-gray-800">app.component.ts</div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '203px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '5s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full mt-4">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bbe8d52e046e00150bd077"
         style="width: 100%; height: 203px"
         frameborder="0"
@@ -76,16 +121,44 @@
       and provided the path to the Logo in the assets folder.
     </div>
     <div class="font-semibold text-base text-gray-800">app.component.ts</div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '5s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full mt-4">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bc1fbc2e046e00150bd07c"
         style="width: 100%; height: 100%"
         frameborder="0"
       ></iframe>
     </div>
     <div class="font-semibold text-base text-gray-800">app.component.html</div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '5s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full mt-4">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bc1ffd2e046e00150bd07d"
         style="width: 100%; height: 100%"
         frameborder="0"
@@ -99,24 +172,69 @@
       it is the exact opposite of property binding, where the data goes from the
       component to the view.
     </div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '5s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div>
-      <img class="flex w-full my-2" src="https://i.imgur.com/qkavXW3.jpg" />
+      <img
+        *ngIf="contentLoaded"
+        class="flex w-full my-2"
+        src="https://i.imgur.com/qkavXW3.jpg"
+      />
     </div>
     <div class="text-gray-800 font-normal text-base my-4 content-center">
       We have created a Subscribe button that displays a “Thank you” message
       when clicked on.
     </div>
     <div class="font-semibold text-base text-gray-800">app.component.html</div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '5s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full mt-4">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bc24612e046e00150bd07e"
         style="width: 100%; height: 100%"
         frameborder="0"
       ></iframe>
     </div>
     <div class="font-semibold text-base text-gray-800">app.component.ts</div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '5s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full mt-4">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bc250f2e046e00150bd07f"
         style="width: 100%; height: 100%"
         frameborder="0"
@@ -132,8 +250,25 @@
       immediately reflected on both. The general syntax to denote two-way data
       binding is a combination of Square brackets and parentheses "[()]".
     </div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '5s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div>
-      <img class="flex w-full my-2" src="https://i.imgur.com/Qn738nr.jpg" />
+      <img
+        *ngIf="contentLoaded"
+        class="flex w-full my-2"
+        src="https://i.imgur.com/Qn738nr.jpg"
+      />
     </div>
     <div class="text-gray-800 font-normal text-base my-4 content-center">
       To illustrate two-way data binding, we’ve created a property with an empty
@@ -141,20 +276,48 @@
       is displayed on the screen with the help of the property.
     </div>
     <div class="font-semibold text-base text-gray-800">app.component.ts</div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '5s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full mt-4">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bc26f42e046e00150bd080"
         style="width: 100%; height: 100%"
         frameborder="0"
       ></iframe>
     </div>
     <div class="font-semibold text-base text-gray-800">app.component.html</div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '5s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full mt-4">
-      <!-- <iframe
+      <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bc27362e046e00150bd081"
         style="width: 100%; height: 100%"
         frameborder="0"
-      ></iframe> -->
+      ></iframe>
     </div>
     <div class="text-gray-800 font-normal text-base my-2 content-center">
       We have used the ngModel directive and initialized it to random. We’ve
@@ -163,34 +326,12 @@
 
     <div class="flex w-full h-full items-end mt-6">
       <div
-        class="
-          flex
-          2xl:flex-row
-          xl:flex-row
-          lg:flex-row
-          md:flex-row
-          flex-col
-          w-full
-          sm:justify-between
-        "
+        class="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col w-full sm:justify-between"
       >
         <div>
           <a routerLink="/view/cli-setup">
             <button
-              class="
-                rounded-full
-                flex flex-row
-                w-full
-                justify-center
-                items-center
-                px-8
-                py-3
-                my-2
-                border border-blue-700
-                text-blue-700 text-center
-                font-bold
-                text-base
-              "
+              class="rounded-full flex flex-row w-full justify-center items-center px-8 py-3 my-2 border border-blue-700 text-blue-700 text-center font-bold text-base"
             >
               <img class="pr-2" src="../assets/icons/previous-icon.svg" />
               <div>Previous Topic</div>
@@ -200,21 +341,7 @@
         <div>
           <a routerLink="/view/directive">
             <button
-              class="
-                rounded-full
-                flex flex-row
-                w-full
-                justify-center
-                items-center
-                px-8
-                py-3
-                my-2
-                bg-blue-700
-                border border-blue-700
-                text-white text-center
-                font-bold
-                text-base
-              "
+              class="rounded-full flex flex-row w-full justify-center items-center px-8 py-3 my-2 bg-blue-700 border border-blue-700 text-white text-center font-bold text-base"
             >
               <div>Next Topic</div>
               <img class="pl-2" src="../assets/icons/next-icon.svg" />

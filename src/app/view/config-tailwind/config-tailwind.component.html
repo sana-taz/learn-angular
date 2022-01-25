@@ -1,38 +1,31 @@
 <div
-  class="
-    flex
-    2xl:w-3/5
-    xl:w-3/5
-    lg:w-4/5
-    md:w-full
-    sm:w-full
-    w-full
-    h-full
-    justify-center
-    container
-    font-inter
-    mx-auto
-    p-6
-  "
+  class="flex 2xl:w-3/5 xl:w-3/5 lg:w-4/5 md:w-full sm:w-full w-full h-full justify-center container font-inter mx-auto p-6"
 >
   <div class="flex flex-col w-full justify-start items-start">
     <div class="text-gray-900 font-bold text-3xl">
       Config tailwind CSS in Angular
     </div>
     <ul
-      class="
-        list-decimal
-        text-gray-800
-        font-normal
-        text-base
-        my-2
-        content-center
-      "
+      class="list-decimal text-gray-800 font-normal text-base my-2 content-center"
     >
       <li class="flex flex-col justify-start my-2">
         <div>1. Install tailwind CSS with</div>
+        <ngx-skeleton-loader
+          class="flex w-full my-4"
+          *ngIf="!contentLoaded"
+          [animation]="animation"
+          [theme]="{
+            'border-radius': '5px',
+            height: '99px',
+            'background-color': '#323232',
+            border: '1px solid #323232',
+            'animation-duration': '2s'
+          }"
+        >
+        </ngx-skeleton-loader>
         <div class="flex w-full mt-4">
           <iframe
+            *ngIf="contentLoaded"
             src="https://www.thiscodeworks.com/embed/61bfd8a154e0160015c9be32"
             style="width: 100%; height: 99px"
             frameborder="0"
@@ -44,8 +37,22 @@
           2. Tailwind CSS has two peer-dependencies postcss and autoprefixer. We
           need to install them as well
         </div>
+        <ngx-skeleton-loader
+          class="flex w-full my-4"
+          *ngIf="!contentLoaded"
+          [animation]="animation"
+          [theme]="{
+            'border-radius': '5px',
+            height: '99px',
+            'background-color': '#323232',
+            border: '1px solid #323232',
+            'animation-duration': '2s'
+          }"
+        >
+        </ngx-skeleton-loader>
         <div class="flex w-full mt-4">
           <iframe
+            *ngIf="contentLoaded"
             src="https://www.thiscodeworks.com/embed/61bfd93054e0160015c9be33"
             style="width: 100%; height: 99px"
             frameborder="0"
@@ -54,8 +61,22 @@
       </li>
       <li class="flex flex-col justify-start my-2">
         <div>3. Generate Tailwind CSS Configuration file</div>
+        <ngx-skeleton-loader
+          class="flex w-full my-4"
+          *ngIf="!contentLoaded"
+          [animation]="animation"
+          [theme]="{
+            'border-radius': '5px',
+            height: '99px',
+            'background-color': '#323232',
+            border: '1px solid #323232',
+            'animation-duration': '2s'
+          }"
+        >
+        </ngx-skeleton-loader>
         <div class="flex w-full mt-4">
           <iframe
+            *ngIf="contentLoaded"
             src="https://www.thiscodeworks.com/embed/61bfd97154e0160015c9be34"
             style="width: 100%; height: 99px"
             frameborder="0"
@@ -64,8 +85,22 @@
       </li>
       <li class="flex flex-col justify-start my-2">
         <div>4. Add Tailwind CSS styles in Global styles file</div>
+        <ngx-skeleton-loader
+          class="flex w-full my-4"
+          *ngIf="!contentLoaded"
+          [animation]="animation"
+          [theme]="{
+            'border-radius': '5px',
+            height: '99px',
+            'background-color': '#323232',
+            border: '1px solid #323232',
+            'animation-duration': '2s'
+          }"
+        >
+        </ngx-skeleton-loader>
         <div class="flex w-full mt-4">
           <iframe
+            *ngIf="contentLoaded"
             src="https://www.thiscodeworks.com/embed/61bfd9c954e0160015c9be35"
             style="width: 100%; height: 125px"
             frameborder="0"
@@ -74,38 +109,14 @@
       </li>
     </ul>
 
-
-
     <div class="flex w-full h-full items-end mt-6">
       <div
-        class="
-          flex
-          2xl:flex-row
-          xl:flex-row
-          lg:flex-row
-          md:flex-row
-          flex-col
-          w-full
-          sm:justify-between
-        "
+        class="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col w-full sm:justify-between"
       >
         <div>
           <a routerLink="/view/form">
             <button
-              class="
-                rounded-full
-                flex flex-row
-                w-full
-                justify-center
-                items-center
-                px-8
-                py-3
-                my-2
-                border border-blue-700
-                text-blue-700 text-center
-                font-bold
-                text-base
-              "
+              class="rounded-full flex flex-row w-full justify-center items-center px-8 py-3 my-2 border border-blue-700 text-blue-700 text-center font-bold text-base"
             >
               <img class="pr-2" src="../assets/icons/previous-icon.svg" />
               <div>Previous Topic</div>
@@ -115,21 +126,7 @@
         <div>
           <a routerLink="/view/angular-material">
             <button
-              class="
-                rounded-full
-                flex flex-row
-                w-full
-                justify-center
-                items-center
-                px-8
-                py-3
-                my-2
-                bg-blue-700
-                border border-blue-700
-                text-white text-center
-                font-bold
-                text-base
-              "
+              class="rounded-full flex flex-row w-full justify-center items-center px-8 py-3 my-2 bg-blue-700 border border-blue-700 text-white text-center font-bold text-base"
             >
               <div>Next Topic</div>
               <img class="pl-2" src="../assets/icons/next-icon.svg" />

@@ -29,6 +29,8 @@ import { TodoAppComponent } from './todo-app/todo-app.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 @NgModule({
   declarations: [
     ArchitectureComponent,
@@ -57,6 +59,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatListModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    NgxSkeletonLoaderModule.forRoot(),
     MatDividerModule,
     MatButtonModule,
     ViewRoutingModule,

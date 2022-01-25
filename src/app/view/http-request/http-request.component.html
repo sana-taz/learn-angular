@@ -1,19 +1,5 @@
 <div
-  class="
-    flex
-    2xl:w-3/5
-    xl:w-3/5
-    lg:w-4/5
-    md:w-full
-    sm:w-full
-    w-full
-    h-full
-    justify-center
-    container
-    font-inter
-    mx-auto
-    p-6
-  "
+  class="flex 2xl:w-3/5 xl:w-3/5 lg:w-4/5 md:w-full sm:w-full w-full h-full justify-center container font-inter mx-auto p-6"
 >
   <div class="flex flex-col w-full justify-start items-start">
     <div class="text-gray-900 font-bold text-3xl">
@@ -26,9 +12,23 @@
       within your function return a http request that maps the response and
       error into json.
     </div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '350px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '2s'
+      }"
+    >
+    </ngx-skeleton-loader>
 
     <div class="flex w-full mt-4">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bfd61254e0160015c9be30"
         style="width: 100%; height: 320px"
         frameborder="0"
@@ -39,8 +39,22 @@
       Once we’ve returned our http observable we can then call this function and
       subscribe to the response like so:
     </div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '350px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '2s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full my-2">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bfd66454e0160015c9be31"
         style="width: 100%; height: 398px"
         frameborder="0"
@@ -55,34 +69,12 @@
 
     <div class="flex w-full h-full items-end mt-6">
       <div
-        class="
-          flex
-          2xl:flex-row
-          xl:flex-row
-          lg:flex-row
-          md:flex-row
-          flex-col
-          w-full
-          sm:justify-between
-        "
+        class="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col w-full sm:justify-between"
       >
         <div>
           <a routerLink="/view/services">
             <button
-              class="
-                rounded-full
-                flex flex-row
-                w-full
-                justify-center
-                items-center
-                px-8
-                py-3
-                my-2
-                border border-blue-700
-                text-blue-700 text-center
-                font-bold
-                text-base
-              "
+              class="rounded-full flex flex-row w-full justify-center items-center px-8 py-3 my-2 border border-blue-700 text-blue-700 text-center font-bold text-base"
             >
               <img class="pr-2" src="../assets/icons/previous-icon.svg" />
               <div>Previous Topic</div>
@@ -92,21 +84,7 @@
         <div>
           <a routerLink="/view/form">
             <button
-              class="
-                rounded-full
-                flex flex-row
-                w-full
-                justify-center
-                items-center
-                px-8
-                py-3
-                my-2
-                bg-blue-700
-                border border-blue-700
-                text-white text-center
-                font-bold
-                text-base
-              "
+              class="rounded-full flex flex-row w-full justify-center items-center px-8 py-3 my-2 bg-blue-700 border border-blue-700 text-white text-center font-bold text-base"
             >
               <div>Next Topic</div>
               <img class="pl-2" src="../assets/icons/next-icon.svg" />

@@ -1,19 +1,5 @@
 <div
-  class="
-    flex
-    2xl:w-3/5
-    xl:w-3/5
-    lg:w-4/5
-    md:w-full
-    sm:w-full
-    w-full
-    h-full
-    justify-center
-    container
-    font-inter
-    mx-auto
-    p-6
-  "
+  class="flex 2xl:w-3/5 xl:w-3/5 lg:w-4/5 md:w-full sm:w-full w-full h-full justify-center container font-inter mx-auto p-6"
 >
   <div class="flex flex-col w-full justify-start items-start">
     <div class="text-gray-900 font-bold text-3xl">Services</div>
@@ -53,8 +39,22 @@
       In order to define a service, create a file called user.service.ts. Within
       this file we will then do the following:
     </div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '350px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '2s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full mt-4">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bc7b054461e000151aad88"
         style="width: 100%; height: 268px"
         frameborder="0"
@@ -68,8 +68,22 @@
       we would first have to import that service and pass the path to that file
       and then Inject it through the constructor of our components class.
     </div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '350px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '2s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full my-2">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bc7b5a4461e000151aad89"
         style="width: 100%; height: 320px"
         frameborder="0"
@@ -78,34 +92,12 @@
 
     <div class="flex w-full h-full items-end mt-6">
       <div
-        class="
-          flex
-          2xl:flex-row
-          xl:flex-row
-          lg:flex-row
-          md:flex-row
-          flex-col
-          w-full
-          sm:justify-between
-        "
+        class="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col w-full sm:justify-between"
       >
         <div>
           <a routerLink="/view/interaction">
             <button
-              class="
-                rounded-full
-                flex flex-row
-                w-full
-                justify-center
-                items-center
-                px-8
-                py-3
-                my-2
-                border border-blue-700
-                text-blue-700 text-center
-                font-bold
-                text-base
-              "
+              class="rounded-full flex flex-row w-full justify-center items-center px-8 py-3 my-2 border border-blue-700 text-blue-700 text-center font-bold text-base"
             >
               <img class="pr-2" src="../assets/icons/previous-icon.svg" />
               <div>Previous Topic</div>
@@ -115,21 +107,7 @@
         <div>
           <a routerLink="/view/httprequest">
             <button
-              class="
-                rounded-full
-                flex flex-row
-                w-full
-                justify-center
-                items-center
-                px-8
-                py-3
-                my-2
-                bg-blue-700
-                border border-blue-700
-                text-white text-center
-                font-bold
-                text-base
-              "
+              class="rounded-full flex flex-row w-full justify-center items-center px-8 py-3 my-2 bg-blue-700 border border-blue-700 text-white text-center font-bold text-base"
             >
               <div>Next Topic</div>
               <img class="pl-2" src="../assets/icons/next-icon.svg" />

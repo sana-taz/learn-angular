@@ -1,19 +1,5 @@
 <div
-  class="
-    flex
-    2xl:w-3/5
-    xl:w-3/5
-    lg:w-4/5
-    md:w-full
-    sm:w-full
-    w-full
-    h-full
-    justify-center
-    container
-    font-inter
-    mx-auto
-    p-6
-  "
+  class="flex 2xl:w-3/5 xl:w-3/5 lg:w-4/5 md:w-full sm:w-full w-full h-full justify-center container font-inter mx-auto p-6"
 >
   <div class="flex flex-col w-full justify-start items-start">
     <div class="text-gray-900 font-bold text-3xl">Forms</div>
@@ -79,8 +65,25 @@
       </ul>
     </div>
     <div class="text-gray-900 font-semibold text-xl">Form Control</div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '350px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '2s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="my-2">
-      <img class="flex w-full" src="https://i.imgur.com/2i2xTWg.png" />
+      <img
+        *ngIf="contentLoaded"
+        class="flex w-full"
+        src="https://i.imgur.com/2i2xTWg.png"
+      />
     </div>
     <div class="text-gray-800 font-normal text-base my-4 content-center">
       Form Control is a class that enables validation. For each input field, an
@@ -89,8 +92,25 @@
       valid, invalid, and so on.
     </div>
     <div class="text-gray-900 font-semibold text-xl">Form Group</div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '350px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '2s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="my-2">
-      <img class="flex w-full" src="https://i.imgur.com/hd1oLvM.png" />
+      <img
+        *ngIf="contentLoaded"
+        class="flex w-full"
+        src="https://i.imgur.com/hd1oLvM.png"
+      />
     </div>
     <div class="text-gray-800 font-normal text-base my-4 content-center">
       FormGroup class represents a group of controls. A form can have multiple
@@ -100,34 +120,12 @@
 
     <div class="flex w-full h-full items-end mt-6">
       <div
-        class="
-          flex
-          2xl:flex-row
-          xl:flex-row
-          lg:flex-row
-          md:flex-row
-          flex-col
-          w-full
-          sm:justify-between
-        "
+        class="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col w-full sm:justify-between"
       >
         <div>
           <a routerLink="/view/httprequest">
             <button
-              class="
-                rounded-full
-                flex flex-row
-                w-full
-                justify-center
-                items-center
-                px-8
-                py-3
-                my-2
-                border border-blue-700
-                text-blue-700 text-center
-                font-bold
-                text-base
-              "
+              class="rounded-full flex flex-row w-full justify-center items-center px-8 py-3 my-2 border border-blue-700 text-blue-700 text-center font-bold text-base"
             >
               <img class="pr-2" src="../assets/icons/previous-icon.svg" />
               <div>Previous Topic</div>
@@ -137,21 +135,7 @@
         <div>
           <a routerLink="/view/tailwind">
             <button
-              class="
-                rounded-full
-                flex flex-row
-                w-full
-                justify-center
-                items-center
-                px-8
-                py-3
-                my-2
-                bg-blue-700
-                border border-blue-700
-                text-white text-center
-                font-bold
-                text-base
-              "
+              class="rounded-full flex flex-row w-full justify-center items-center px-8 py-3 my-2 bg-blue-700 border border-blue-700 text-white text-center font-bold text-base"
             >
               <div>Next Topic</div>
               <img class="pl-2" src="../assets/icons/next-icon.svg" />

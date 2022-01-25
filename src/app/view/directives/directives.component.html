@@ -1,19 +1,5 @@
 <div
-  class="
-    flex
-    2xl:w-3/5
-    xl:w-3/5
-    lg:w-4/5
-    md:w-full
-    sm:w-full
-    w-full
-    h-full
-    justify-center
-    container
-    font-inter
-    mx-auto
-    p-6
-  "
+  class="flex 2xl:w-3/5 xl:w-3/5 lg:w-4/5 md:w-full sm:w-full w-full h-full justify-center container font-inter mx-auto p-6"
 >
   <div class="flex flex-col w-full justify-start items-start">
     <div class="text-gray-900 font-bold text-3xl">Directives</div>
@@ -26,16 +12,47 @@
       applications, we are actually saying that directives are the building
       blocks of Angular applications.
     </div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '350px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '2s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div>
-      <img class="flex w-full my-4" src="https://i.imgur.com/U4Shh6m.png" />
+      <img
+        *ngIf="contentLoaded"
+        class="flex w-full my-4"
+        src="https://i.imgur.com/U4Shh6m.png"
+      />
     </div>
     <div class="text-gray-900 font-semibold text-xl">Component Directives</div>
     <div class="text-gray-800 font-normal text-base my-4 content-center">
       It forms the main class and is declared by @Component. It contains the
       details on component processing, instantiated and usage at run time.
     </div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '2s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full mt-4">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bc2f402e046e00150bd082"
         style="width: 100%; height: 100%"
         frameborder="0"
@@ -55,8 +72,22 @@
       condition.
     </div>
     <div class="text-gray-900 font-semibold my-2 text-xl">app.component.ts</div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '2s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full my-2">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bc313f2e046e00150bd083"
         style="width: 100%; height: 100%"
         frameborder="0"
@@ -65,8 +96,22 @@
     <div class="text-gray-900 font-semibold mb-2 text-xl">
       app.component.html
     </div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '2s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full my-2">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bc31b02e046e00150bd084"
         style="width: 100%; height: 100%"
         frameborder="0"
@@ -78,8 +123,22 @@
       list of items using repetitive loops.
     </div>
     <div class="text-gray-900 font-semibold my-2 text-xl">app.component.ts</div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '2s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full my-2">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bc32972e046e00150bd085"
         style="width: 100%; height: 100%"
         frameborder="0"
@@ -88,8 +147,22 @@
     <div class="text-gray-900 font-semibold mb-2 text-xl">
       app.component.html
     </div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '2s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full my-2">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bc32cf2e046e00150bd086"
         style="width: 100%; height: 100%"
         frameborder="0"
@@ -104,8 +177,22 @@
     <div class="text-gray-900 font-semibold mb-2 text-xl">
       app.component.html
     </div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '2s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full my-2">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bc348d2e046e00150bd087"
         style="width: 100%; height: 100%"
         frameborder="0"
@@ -136,8 +223,22 @@
     <div class="text-gray-900 font-semibold mb-2 text-xl">
       app.component.html
     </div>
+    <ngx-skeleton-loader
+      class="flex w-full my-4"
+      *ngIf="!contentLoaded"
+      [animation]="animation"
+      [theme]="{
+        'border-radius': '5px',
+        height: '99px',
+        'background-color': '#323232',
+        border: '1px solid #323232',
+        'animation-duration': '2s'
+      }"
+    >
+    </ngx-skeleton-loader>
     <div class="flex w-full my-2">
       <iframe
+        *ngIf="contentLoaded"
         src="https://www.thiscodeworks.com/embed/61bc359d2e046e00150bd088"
         style="width: 100%; height: 100%"
         frameborder="0"
@@ -146,34 +247,12 @@
 
     <div class="flex w-full h-full items-end mt-6">
       <div
-        class="
-          flex
-          2xl:flex-row
-          xl:flex-row
-          lg:flex-row
-          md:flex-row
-          flex-col
-          w-full
-          sm:justify-between
-        "
+        class="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col w-full sm:justify-between"
       >
         <div>
           <a routerLink="/view/databinding">
             <button
-              class="
-                rounded-full
-                flex flex-row
-                w-full
-                justify-center
-                items-center
-                px-8
-                py-3
-                my-2
-                border border-blue-700
-                text-blue-700 text-center
-                font-bold
-                text-base
-              "
+              class="rounded-full flex flex-row w-full justify-center items-center px-8 py-3 my-2 border border-blue-700 text-blue-700 text-center font-bold text-base"
             >
               <img class="pr-2" src="../assets/icons/previous-icon.svg" />
               <div>Previous Topic</div>
@@ -183,21 +262,7 @@
         <div>
           <a routerLink="/view/interaction">
             <button
-              class="
-                rounded-full
-                flex flex-row
-                w-full
-                justify-center
-                items-center
-                px-8
-                py-3
-                my-2
-                bg-blue-700
-                border border-blue-700
-                text-white text-center
-                font-bold
-                text-base
-              "
+              class="rounded-full flex flex-row w-full justify-center items-center px-8 py-3 my-2 bg-blue-700 border border-blue-700 text-white text-center font-bold text-base"
             >
               <div>Next Topic</div>
               <img class="pl-2" src="../assets/icons/next-icon.svg" />
