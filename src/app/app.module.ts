@@ -14,6 +14,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ViewModule } from './view/view.module';
 import { LandingModule } from './landing/landing.module';
 import { FormsModule } from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -31,7 +33,13 @@ import { FormsModule } from '@angular/forms';
     MatDividerModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    ViewModule
+    ViewModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],

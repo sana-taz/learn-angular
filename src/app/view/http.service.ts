@@ -7,12 +7,10 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class HttpService {
-  private url: string = 'http://localhost:3000/api/tasks';
+  private url: string = 'http://localhost:3200/api/tasks';
   constructor(public http: HttpClient) {}
   getTasks(): Observable<Task[]> {
-    return this.http
-      .get<Task[]>(this.url)
-      .pipe(catchError(this.errorHandler));
+    return this.http.get<Task[]>(this.url).pipe(catchError(this.errorHandler));
   }
   addTask(data: any): Observable<Task[]> {
     return this.http

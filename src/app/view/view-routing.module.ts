@@ -22,27 +22,31 @@ const routes: Routes = [
     path: 'view',
     component: ViewComponent,
     children: [
-      { path: 'architecture', component: ArchitectureComponent , canActivate: [AuthGuard] },
+      {
+        path: 'architecture',
+        component: ArchitectureComponent,
+        canActivate: [AuthGuard],
+      },
       { path: 'introduction', component: IntroductionComponent },
       { path: 'cli-setup', component: AngularCliSetupComponent },
       { path: 'databinding', component: DataBindingComponent },
       { path: 'directive', component: DirectivesComponent },
       { path: 'interaction', component: InteractionComponent },
       { path: 'services', component: ServicesComponent },
-      { path: 'httprequest', component: HttpRequestComponent},
-      { path: 'tailwind', component: ConfigTailwindComponent},
-      { path: 'angular-material', component: ConfigAngularMaterialComponent},
-      { path: 'form', component: FormComponent},
-      { path: 'todo', component: TodoAppComponent},
-      { path: 'login' , component: LoginComponent} ,
-      { path: 'landing-page' , component:LandingComponent } ,
-      { path: '**', redirectTo: '/landing-page/login' , pathMatch: 'full' },
-    ]
-  }
+      { path: 'httprequest', component: HttpRequestComponent },
+      { path: 'tailwind', component: ConfigTailwindComponent },
+      { path: 'angular-material', component: ConfigAngularMaterialComponent },
+      { path: 'form', component: FormComponent },
+      { path: 'todo', component: TodoAppComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'landing-page', component: LandingComponent },
+      { path: '**', redirectTo: '/landing-page/login', pathMatch: 'full' },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ViewRoutingModule { }
+export class ViewRoutingModule {}
